@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <span id="notfication"></span>
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io('http://localhost:3000');
+    fetch('http://localhost:3000/addPost')
+    .then((res)=>{
+        const data = res.data;
+        if(data.verify === true){
+            socket.on('notifPost',(data)=>{
+            document.getElementById('notification').innerHTML+='<p><strong>Notfication has been sent</strong></p>'
+      })
+    }
+    })
+</script>
+</html>
