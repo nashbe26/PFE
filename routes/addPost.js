@@ -9,5 +9,6 @@ router.get('/addPost',function(req,res){
 })
 router.get('/showPost',addPsotController.retPsot)
 router.get('/showPost/:id',addPsotController.showPostById)
+router.get('/showPostNotifcationUsers/:id',addPsotController.showUserNotification)
 
 module.exports=router;

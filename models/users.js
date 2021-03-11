@@ -12,6 +12,9 @@ const newUsers = new Schema({
     },
     posts:[
         {type:mongoose.Schema.Types.ObjectId,ref:'posts'}
+    ],
+    notification:[
+        {type:mongoose.Schema.Types.ObjectId,ref:'notfications'}
     ]
 })
 

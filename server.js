@@ -8,7 +8,7 @@ const addUser = require('./routes/addUser')
 
 const mongoose = require('mongoose');
 
-const socket = require('socket.io')
+const io = require('socket.io')
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -24,5 +24,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/',addPost)
 app.use('/',addUser)
 
-
+// io.on('connection', function (socket) {
+//     socket.on( 'new_notification', function( data ) {
+//       console.log(data.title,data.message);
+//       io.sockets.emit( 'show_notification', { 
+//         title: data.title, 
+//         message: data.message, 
+//         icon: data.icon, 
+//       });
+//     });
+//   });
 

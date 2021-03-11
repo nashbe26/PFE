@@ -12,17 +12,11 @@
     <span id="notfication"></span>
 
 </body>
-<script src="/socket.io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js" defer></script>
 <script>
-    const socket = io('http://localhost:3000');
-    fetch('http://localhost:3000/addPost')
-    .then((res)=>{
-        const data = res.data;
-        if(data.verify === true){
-            socket.on('notifPost',(data)=>{
-            document.getElementById('notification').innerHTML+='<p><strong>Notfication has been sent</strong></p>'
-      })
-    }
-    })
+    // const socket = io()
+    //     socket.on('show_notification', function (data) {
+    //         document.getElementById('notificaation').innerHTML='<p>'+data.data+'</p>';
+    //     });
 </script>
 </html>

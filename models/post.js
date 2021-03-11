@@ -9,7 +9,9 @@ const postSchema = new Schema({
         type:String,
         required:true
     },
-    user:{type:mongoose.Schema.Types.ObjectId,ref:'users'}
+    user:{type:mongoose.Schema.Types.ObjectId,ref:'users'},
+    notfication:{type:mongoose.Schema.Types.ObjectId,ref:'notifications'}
+
 })
 const Posts = mongoose.model('Posts',postSchema);
 module.exports=Posts
